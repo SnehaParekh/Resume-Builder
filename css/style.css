@@ -1,0 +1,299 @@
+/*#484848;*/
+
+body,
+div,
+ul,
+li,
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    padding: 0;
+    margin: 0;
+    font-family: 'Lato', sans-serif;
+}
+
+.clear-fix {
+    overflow: auto;
+}
+
+.education-entry,
+.work-entry,
+.project-entry {
+    padding: 0 5%;
+}
+
+#workExperience h2,
+#projects h2,
+#education h2,
+#mapDiv h2,
+#lets-connect h2 {
+    text-transform: uppercase;
+    padding-top: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+    font-size: 40px;
+    color: #E5DF92;
+    text-transform: uppercase;
+    font-family: 'Roboto', sans-serif;
+    line-height: 48px;
+    display: inline;
+    font-weight: 300;
+}
+
+h2 {
+    font-weight: bold;
+    font-size: 24px;
+    color: #999;
+    line-height: 29px;
+    padding: 10px;
+}
+
+h3 {
+    font-size: 20px;
+    color: #000;
+    line-height: 22px;
+}
+
+h4 {
+    font-weight: bold;
+    font-size: 14px;
+    color: #4a4a4a;
+    line-height: 17px;
+}
+
+h2,
+h3,
+h4,
+h5 {
+    padding: 10px 5%;
+}
+
+p {
+    font-size: 14px;
+    color: #333;
+    line-height: 22px;
+    margin-bottom: 30px;
+}
+
+a {
+    color: #1199c3;
+    text-decoration: none;
+    margin-top: 15px;
+    display: block;
+    font-family: 'Lato', sans-serif;
+    font-weight: 400;
+    font-size: 20px;
+}
+
+
+/*----------------------------------------------------------------------------------------------
+PERSONAL INFO SECTION
+-----------------------------------------------------------------------------------------------*/
+
+.welcome-message {
+    font-family: 'Roboto', sans-serif;
+    font-weight: 500;
+    font-size: 14px;
+    text-transform: uppercase;
+    color: #E5DF92;
+    line-height: 28px;
+    font-style: italic;
+}
+
+#skillsetHeading {
+    color: #A9A9B2;
+    display: none;
+    font-size: 14px;
+    text-transform: uppercase;
+}
+
+.heading {
+    color: #A9A9B2;
+    text-transform: uppercase;
+    font-size: 12px;
+}
+
+.info {
+    color: #D9D9DE;
+    font-weight: 700;
+}
+
+.skillList {
+    font-size: 14px;
+    color: #D9D9DE;
+    font-weight: 700;
+}
+
+
+/*----------------------------------------------------------------------------------------------
+ WORK SECTION
+-----------------------------------------------------------------------------------------------*/
+
+#workExperience h2 {}
+
+.date-text {
+    font-size: 14px;
+    color: #999;
+    line-height: 16px;
+    float: left;
+}
+
+.location-text {
+    font-size: 14px;
+    color: #999;
+    line-height: 16px;
+    float: right;
+    text-transform: uppercase;
+    font-weight: 700;
+}
+
+
+/*----------------------------------------------------------------------------------------------
+ EDUCATION SECTION
+-----------------------------------------------------------------------------------------------*/
+
+.onlineCoursesMainHeading {
+    text-transform: uppercase;
+    padding-top: 30px;
+    font-family: 'Roboto', sans-serif;
+}
+
+#courseHeading{
+    font-size: 15px;
+    font-family: 'Lato', sans-serif;
+}
+
+
+#major {
+    text-transform: uppercase;
+    font-size: 12px;
+    letter-spacing: 0.15em;
+}
+
+
+
+/*----------------------------------------------------------------------------------------------
+ MISCELLANEOUS
+-----------------------------------------------------------------------------------------------*/
+.gray {
+    background-color: #f3f3f3;
+    padding-bottom: 10px;
+    clear: both;
+    /*    #f3f3f3;*/
+}
+
+.dark-gray {
+    background-color: #35478C;
+}
+
+
+#header {
+    background-color: #35478C;
+    /*    #484848;*/
+    ;
+}
+
+.flex-box {
+    display: -webkit-flex;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    padding: 10px;
+}
+
+.flex-column {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    padding: 10px;
+}
+
+.center-content {
+    padding: 2.5% 5%;
+}
+
+ul {
+    list-style-type: none;
+}
+
+.biopic {
+    float: left;
+    padding: 10px;
+    width: 200px;
+    display: none;
+}
+
+.projectPic {
+    padding: 10px;
+    width: 200px;
+    height: 200px;
+}
+
+img {
+    box-sizing: border-box;
+    border: 10px solid #D9D9DE;
+    border-radius: 5px;
+    margin: 10px;
+}
+
+span {
+    padding: 5px;
+}
+
+#map {
+    display: block;
+    height: 100%;
+    margin: 0 5%;
+}
+
+#mapDiv {
+    height: 400px;
+    width: 100%;
+    padding-bottom: 5%;
+}
+
+#lets-connect {
+    text-align: center;
+}
+
+/*----------------------------------------------------------------------------------------------
+  Media queries to handle various device widths
+-----------------------------------------------------------------------------------------------*/
+
+@media only screen and (max-width: 1024px) {
+    #lets-connect {
+        margin-top: 5%;
+    }
+}
+
+@media only screen and (max-width:900px) {
+    .biopic {
+        width: 175px;
+    }
+}
+
+@media only screen and (max-width: 750px) {
+    #lets-connect {
+        margin-top: 10%;
+    }
+    .biopic {
+        width: 150px;
+    }
+    .welcome-message {
+        display: none;
+    }
+}
+
+@media only screen and (min-width: 750px) {
+    #skills-h3,
+    .biopic {
+        display: block;
+    }
+}
