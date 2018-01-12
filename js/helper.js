@@ -57,7 +57,7 @@ $(document).ready(function() {
 });
 
 /*
-The next few lines about clicks are for the Collecting Click Locations data- analytics.
+Collecting Click Locations for data analytics.
 */
 var clickLocations = [];
 
@@ -76,12 +76,11 @@ $(document).click(function(loc) {
 });
 
 
+/*
+InitializeMap() is called when page is loaded. Map api url - https://developers.google.com/maps/documentation/javascript/3.exp/reference
+*/
 var map;
 
-
-/*
-InitializeMap() is called when page is loaded.
-*/
 function initializeMap() {
 
   var locations;
@@ -90,31 +89,14 @@ function initializeMap() {
     disableDefaultUI: true
   };
 
-  /*
-  For the map to be displayed, the googleMap var must be
-  appended to #mapDiv in resumeBuilder.js.
-  */
   map = new google.maps.Map(document.querySelector('#map'), mapOptions);
 
-
-  /*
-  locationFinder() returns an array of every location string from the JSONs
-  written for bio, education, and work.
-  */
   function locationFinder() {
     var locations = [];
-
-    // adds the single location property from bio to the locations array
     locations.push(bio.contacts.location);
-
-    // iterates through school locations and appends each location to
-    // the locations array. 
     education.schools.forEach(function(school){
       locations.push(school.location);
     });
-
-    // iterates through work locations and appends each location to
-    // the locations array.
     work.jobs.forEach(function(job){
       locations.push(job.location);
     });
@@ -122,29 +104,18 @@ function initializeMap() {
     return locations;
   }
 
-  /*
-  createMapMarker(placeData) reads Google Places search results to create map pins.
-  placeData is the object returned from search results containing information
-  about a single location.
-  */
   function createMapMarker(placeData) {
-
-    // The next lines save location data from the search result object to local variables
     var lat = placeData.geometry.location.lat();  // latitude from the place service
     var lon = placeData.geometry.location.lng();  // longitude from the place service
     var name = placeData.formatted_address;   // name of the place from the place service
     var bounds = window.mapBounds;            // current boundaries of the map window
 
-    // marker is an object with additional data about the pin for a single location
     var marker = new google.maps.Marker({
       map: map,
       position: placeData.geometry.location,
       title: name
     });
-
-    // infoWindows are the little helper windows that open when you click
-    // or hover over a pin on a map. They usually contain more information
-    // about a location.
+      
     var infoWindow = new google.maps.InfoWindow({
       content: name
     });
@@ -194,7 +165,6 @@ function initializeMap() {
     });
   }
 
-  // Sets the boundaries of the map based on pin locations
   window.mapBounds = new google.maps.LatLngBounds();
 
   // locations is an array of location strings returned from locationFinder()
